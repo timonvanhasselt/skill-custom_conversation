@@ -1,0 +1,2 @@
+(open|start) (mijn |de |)(?P<file_to_run>.*) (script|skill|app)( file|)
+
