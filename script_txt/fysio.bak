@@ -1,0 +1,54 @@
+
+Script: "Visio"
+Description: "Een test voor Visio"
+Author: Timon van Hasselt
+Synonym: "Visio, Fysio"
+
+Neon speak: 
+    Welkom bij de Visio assistent
+    Ik kan het laatste nieuws van het Kennisportaal geven, een podcast afspelen en uw afspraken bij Visio vertellen.
+
+@hulpvraag
+Neon speak: 
+    Waarmee kan ik u helpen?
+    voice_input{test}
+
+if {test} CONTAINS nieuws, laatste nieuws, kennisportaal:
+    Neon speak: Ok, dit heb ik gevonden op het kennisportaal.
+    Neon speak: Kan ik nog iets doen?
+    voice_input{input}
+    if {input} CONTAINS "ja":
+        Goto: hulpvraag
+    if {input} CONTAINS "nee":
+        Goto: stop
+
+if {test} CONTAINS podcast, pod cast, speel de podcast, speel een podcast, speel:
+    Neon speak: Ik ga de podcast afspelen. 
+    Reconvey: "kort.mp3"
+    Neon speak: Kan ik nog iets doen?
+    voice_input{input}
+    if {input} CONTAINS "ja":
+        Goto: hulpvraag
+    if {input} CONTAINS "nee":
+        Goto: stop
+
+if {test} CONTAINS afspraak, afspraak maken, afspraken, wanneer heb ik een afspraak:
+    Neon speak: U hebt aankomende dinsdag om 10.00 uur een afspraak bij Visio Amsterdam.
+    Neon speak: Kan ik nog iets doen?
+    voice_input{input}
+    if {input} CONTAINS "ja":
+        Goto: hulpvraag
+    if {input} CONTAINS "nee":
+        Goto: stop
+
+else:
+    Neon speak: Sorry, ik begreep het niet.
+    Goto: hulpvraag
+
+@stop
+Neon speak: Ok, graag tot een volgende keer.
+    Reconvey: "shutdown.mp3"
+    Exit
+
+Exit
+

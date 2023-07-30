@@ -1,0 +1,6 @@
+Script: "Hallo wereld"
+Variable: input
+Neon speak: "Hallo wereld. Zeg maar iets leuks"
+voice_input(input)
+Neon speak: "Je zei {input}"
+Exit
