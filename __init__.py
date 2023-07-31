@@ -45,7 +45,8 @@ from neon_utils.parse_utils import clean_quotes
 from ovos_utils import classproperty
 from ovos_utils.log import LOG
 from ovos_utils.process_utils import RuntimeRequirements
-from mycroft.util.parse import normalize
+#from mycroft.util.parse import normalize
+from ovos-lingua-franca.lingua_franca.parse import normalize
 from mycroft.util.audio_utils import play_audio_file
 
 from .utils_emulate import Conversation, ConversationManager
