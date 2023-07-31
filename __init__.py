@@ -32,9 +32,11 @@ from copy import deepcopy
 from adapt.intent import IntentBuilder
 from git import InvalidGitRepositoryError
 
-from mycroft.audio import wait_while_speaking
+#from mycroft.audio import wait_while_speaking
+from ovos_audio.utils import wait_while_speaking
 from ovos_bus_client import Message
-from mycroft.skills.core import intent_handler
+#from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 from neon_utils.message_utils import get_message_user, request_from_mobile, request_for_neon, build_message
 from neon_utils.skills.neon_skill import NeonSkill
 from neon_utils.user_utils import get_user_prefs
